@@ -1,0 +1,40 @@
+{
+  "name": "image-processing-api",
+  "version": "1.0.0",
+  "description": "Udacity Fullstack Javascript Course Project 1(Backend node express)",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "lint": "eslint . --ext .ts",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "test": "npm run build && jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfm2686/ud-image-processing-api.git"
+  },
+  "author": "Sultan Mira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfm2686/ud-image-processing-api/issues"
+  },
+  "homepage": "https://github.com/sfm2686/ud-image-processing-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jasmine": "^4.5.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "sharp": "^0.31.3",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^4.3.1",
+    "@types/node": "^18.13.0",
+    "@types/supertest": "^2.0.12",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
