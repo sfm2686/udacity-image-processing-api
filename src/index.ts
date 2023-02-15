@@ -1,5 +1,6 @@
 import express from 'express';
-import imageRoute from './routes/images'
+import imageRoute from './routes/images';
+import { log } from './logger';
 
 const app = express();
 const port = 3000;
@@ -9,4 +10,7 @@ app.listen(port, () => {
   console.log(`server started and listening at localhost:${port}`);
 });
 
-app.use('/image', imageRoute);
+app.use(log);
+app.use('/api', imageRoute);
+
+export default app;
