@@ -1,5 +1,4 @@
 import fs from 'fs';
-import { before } from 'node:test';
 import path from 'path';
 import { resizeImageJpg } from '../../../src/process/images';
 
@@ -22,7 +21,7 @@ describe('Test images processing', () => {
   });
 
   it('handles incorrect image names', async () => {
-    let name = await resizeImageJpg('no-image', 400, 400);
+    const name = await resizeImageJpg('no-image', 400, 400);
     const files = fs.readdirSync(THUMBS_DIR);
     expect(files.length).toEqual(0);
     expect(name).toBe('');

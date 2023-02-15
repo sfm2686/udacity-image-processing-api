@@ -16,14 +16,14 @@ routes.get('/images', async (req, res) => {
     return res.status(400).send(results.error.issues[0]);
   }
   if (isNaN(results.data.width) || isNaN(results.data.height)) {
-    return res.status(400).send({error: 'invalid width or height'});
+    return res.status(400).send({ error: 'invalid width or height' });
   }
   const { width, height } = results.data;
   if (width < 0 || width > 10000) {
-    return res.status(400).send({error: 'invalid width'});
+    return res.status(400).send({ error: 'invalid width' });
   }
   if (height < 0 || height > 10000) {
-    return res.status(400).send({error: 'invalid height'});
+    return res.status(400).send({ error: 'invalid height' });
   }
   // process
   const thumbFilename = await resizeImageJpg(

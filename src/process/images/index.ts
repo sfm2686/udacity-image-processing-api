@@ -8,7 +8,7 @@ export const resizeImageJpg = async (
   filename: string,
   width: number,
   height: number
-) : Promise<string> => {
+): Promise<string> => {
   filename += '.jpg';
   // check if filename is valid
   if (!fs.existsSync(path.join(ABS_FILES_BASE_PATH, 'full', filename))) {
