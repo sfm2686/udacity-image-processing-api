@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { before } from 'node:test';
 import path from 'path';
 import { resizeImageJpg } from '../../../src/process/images';
 
@@ -25,6 +26,13 @@ describe('Test images processing', () => {
     const files = fs.readdirSync(THUMBS_DIR);
     expect(files.length).toEqual(0);
     expect(name).toBe('');
+  });
+
+  beforeAll(() => {
+    const files = fs.readdirSync(THUMBS_DIR);
+    files.forEach(file => {
+      fs.unlinkSync(path.join(THUMBS_DIR, file));
+    });
   });
 
   afterEach(() => {

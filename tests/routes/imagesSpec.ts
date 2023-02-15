@@ -34,6 +34,13 @@ describe('Test images endpoint', () => {
     expect(response.status).toBe(200);
   });
 
+  beforeAll(() => {
+    const files = fs.readdirSync(THUMBS_DIR);
+    files.forEach(file => {
+      fs.unlinkSync(path.join(THUMBS_DIR, file));
+    });
+  });
+
   afterEach(() => {
     const files = fs.readdirSync(THUMBS_DIR);
     files.forEach(file => {
