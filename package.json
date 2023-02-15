@@ -4,6 +4,7 @@
   "description": "Udacity Fullstack Javascript Course Project 1(Backend node express)",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/index.ts",
     "build": "npx tsc",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
@@ -24,15 +25,19 @@
     "jasmine": "^4.5.0",
     "jasmine-spec-reporter": "^7.0.0",
     "sharp": "^0.31.3",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "@types/jasmine": "^4.3.1",
     "@types/node": "^18.13.0",
+    "@types/sharp": "^0.31.1",
     "@types/supertest": "^2.0.12",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.5.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
