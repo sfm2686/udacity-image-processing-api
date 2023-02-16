@@ -4,7 +4,7 @@ import { resizeImageJpg } from '../process/images/index';
 
 const routes = express.Router();
 
-routes.get('/images', async (req, res) => {
+routes.get('/images', async (req: express.Request, res: express.Response): Promise<express.Response | void> => {
   // validate
   const schema = z.object({
     filename: z.string().max(200),
@@ -19,10 +19,10 @@ routes.get('/images', async (req, res) => {
     return res.status(400).send({ error: 'invalid width or height' });
   }
   const { width, height } = results.data;
-  if (width < 0 || width > 10000) {
+  if (width <= 0 || width > 10000) {
     return res.status(400).send({ error: 'invalid width' });
   }
-  if (height < 0 || height > 10000) {
+  if (height <= 0 || height > 10000) {
     return res.status(400).send({ error: 'invalid height' });
   }
   // process
